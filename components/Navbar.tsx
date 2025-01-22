@@ -8,6 +8,8 @@ import SearchBar from "./SearchBar";
 import MenuSmall from "./MenuSmall";
 import { useEffect, useRef, useState } from "react";
 import Cart from "./Cart";
+import axios from "axios";
+import { CartProps } from "@/types";
 
 const Navbar = () => {
   // Path Name For Active Class
@@ -26,13 +28,26 @@ const Navbar = () => {
 
   // Get Cart Length
   const [numOfCart, setNumOfCart] = useState<number>(0);
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const cartLength = localStorage.getItem("cartLength");
-      if (cartLength !== null) {
-        setNumOfCart(JSON.parse(cartLength));
+    const fetchCart = async () => {
+      try {
+        const { data: cartProducts } = await axios.get<CartProps>(
+          "https://fakestoreapi.com/carts/1"
+        );
+
+        const num = cartProducts.products.reduce(
+          (acc, cur) => acc + cur.quantity,
+          0
+        );
+
+        setNumOfCart(num);
+      } catch (err) {
+        console.log(err);
       }
-    }
+    };
+
+    fetchCart();
   }, []);
 
   // Cart Open
@@ -116,7 +131,7 @@ const Navbar = () => {
               <span className="font-semibold">Profile</span>
             </Link>
             <div className="relative">
-              <div className="absolute -top-[6px] -right-[6px] bg-main text-white w-[16px] h-[16px] rounded-full text-xs flex justify-center items-center cursor-pointer">
+              <div className="absolute -top-[6px] -right-[6px] bg-main text-white w-[16px] h-[16px] rounded-full text-xs hidden  lg:flex justify-center items-center cursor-pointer">
                 {numOfCart}
               </div>
               <ShoppingCart
