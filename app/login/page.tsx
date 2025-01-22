@@ -61,7 +61,7 @@ const LoginPage: React.FC = () => {
             }}
           >
             <div className="mb-8">
-              <div className="logo flex flex-col items-center justify-center pt-5">
+              <div className="logo flex flex-col items-center justify-center pt-5 dark:text-white">
                 <span
                   className="font-bold text-2xl"
                   style={{ lineHeight: ".5" }}
@@ -77,7 +77,7 @@ const LoginPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
+              <label className="text-gray-800 text-sm mb-2 block dark:text-gray-400">
                 User name
               </label>
               <div className="relative flex items-center">
@@ -87,14 +87,14 @@ const LoginPage: React.FC = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="w-full text-sm text-gray-800 border border-gray-300 pl-4 pr-10 py-3 rounded-lg outline-bgLight-200"
+                  className="w-full text-sm text-gray-800 border border-gray-300 pl-4 pr-10 py-3 rounded-lg outline-bgLight-200 bg-transparent dark:text-white"
                   placeholder="Enter user name"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
+              <label className="text-gray-800 text-sm mb-2 block dark:text-gray-400">
                 Password
               </label>
               <div className="relative flex items-center">
@@ -104,7 +104,7 @@ const LoginPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full text-sm text-gray-800 border border-gray-300 pl-4 pr-10 py-3 rounded-lg outline-bgLight-200"
+                  className="w-full text-sm text-gray-800 border border-gray-300 pl-4 pr-10 py-3 rounded-lg outline-bgLight-200 bg-transparent dark:text-white"
                   placeholder="Enter password"
                 />
               </div>
