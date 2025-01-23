@@ -28,7 +28,7 @@ const Filter = () => {
   return (
     <div className="flex flex-wrap gap-4 px-4 md:px-8 xl:px-40 dark:text-white mb-8">
       <Select onValueChange={(value) => handleFilterChange("cat", value)}>
-        <SelectTrigger className="w-[170px] md:w-[180px] focus:ring-transparent dark:focus:ring-transparent">
+        <SelectTrigger className="w-[100%] md:w-[180px] focus:ring-transparent dark:focus:ring-transparent">
           <SelectValue placeholder="Select a Category" />
         </SelectTrigger>
         <SelectContent>
@@ -47,7 +47,7 @@ const Filter = () => {
       </Select>
 
       <Select onValueChange={(value) => handleFilterChange("sort", value)}>
-        <SelectTrigger className="w-[170px] md:w-[180px] focus:ring-transparent dark:focus:ring-transparent">
+        <SelectTrigger className="w-[100%] md:w-[180px] focus:ring-transparent dark:focus:ring-transparent">
           <SelectValue placeholder="Sort By" />
         </SelectTrigger>
         <SelectContent>
@@ -63,19 +63,19 @@ const Filter = () => {
         type="text"
         placeholder="Min"
         onChange={(e) => handleFilterChange("min", e.target.value)}
-        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent w-[170px] md:w-[180px]"
+        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent w-[100%] md:w-[180px]"
       />
       <Input
         type="text"
         placeholder="Max"
         onChange={(e) => handleFilterChange("max", e.target.value)}
-        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent w-[170px] md:w-[180px]"
+        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent w-[100%] md:w-[180px]"
       />
       <Input
         type="text"
         placeholder="Search"
         onChange={(e) => handleFilterChange("title", e.target.value)}
-        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent ms-auto w-[170px] md:w-[240px]"
+        className="focus-visible:ring-transparent dark:focus-visible:ring-transparent ms-auto w-[100%] order-[-1] md:order-10 md:w-[240px]"
       />
     </div>
   );

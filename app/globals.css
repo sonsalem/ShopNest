@@ -122,8 +122,10 @@ body {
   }
 }
 
-.imageZoom:hover > img {
-  opacity: 0;
+@media (width >= 776px) {
+  .imageZoom:hover > img {
+    opacity: 0;
+  }
 }
 
 .linkunder::before {
